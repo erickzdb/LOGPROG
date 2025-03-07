@@ -1,0 +1,44 @@
+programa
+{
+	funcao inicio() {
+		inteiro numero
+
+		escreva("Digite um número: ")
+		leia(numero)
+
+		se(numero>=0){
+			escreva("O número é positivo.\n")
+		}senao{
+			escreva("O número é negativo.\n")
+		}
+	}
+}
+
+--------------------------------------------------------------------
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro i = 3
+
+		enquanto (i <= 50) {
+			escreva("Número: ", i, "\n")
+			i = i + 3
+		}
+	
+	}
+}
+
+------------------------------------------------------------------------------------------------
+programa
+{
+
+	funcao inicio()
+	{
+		para (inteiro i = 1; i <= 10; i++) {
+			escreva("Número: ", i, "\n")
+		}
+	}
+}
+----------------------------------------------------------
