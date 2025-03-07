@@ -1,0 +1,17 @@
+programa{
+	funcao inicio(){
+		logico A = falso
+		logico B = falso
+		logico C = falso
+
+		escreva("A AND B: ", A e B, "\n")
+		escreva("A OR B: ", A ou B, "\n")
+		escreva("NOT A: ", nao B,"\n")
+		escreva("A AND B AND C: ", A e B e C, "\n")
+		escreva("A OR B OR C: ", A ou B ou C, "\n")
+		escreva("NOT B: ",  nao A, "\n")
+	
+		
+
+	}
+}
