@@ -1,0 +1,82 @@
+1º exercício
+programa
+{
+    funcao inicio()//inicio do programa
+    {
+        inteiro numero//variavel
+
+        escreva("Digite um número inteiro: ")// digitar qualquer numero para verificar se será impar ou par
+        leia(numero)
+
+        se (numero % 2 == 0) {//sendo par qualquer numero será divido por dois
+            escreva(numero, " é par.")
+        } senao {
+            escreva(numero, " é ímpar.")// qualquer que não seja divido por dois, será impar
+        }
+    }
+}
+
+------------------------------------------------------------------------------------
+
+2º exercício
+programa
+{
+    funcao inicio()//inicio de programa
+    {
+        real nota1, nota2, media//variável da função
+
+        escreva("Digite a primeira nota: ")// valor da primeira nota 
+        leia(nota1)
+
+        escreva("Digite a segunda nota: ")// valor da segunda nota
+        leia(nota2)
+
+
+        media = (nota1 + nota2 ) / 2//caluco total entre as duas notas para alcancar o resultado total
+
+        escreva("A média é: ", media)//resposta da média
+    }
+}
+
+--------------------------------------------------------------------------------------------
+
+3 exercício
+programa
+{
+    funcao inicio()//início de programa
+    {
+        inteiro contador//variável do programa
+
+        escreva("Digite o número inicial da contagem regressiva: ")//digitar um número a sua escolha
+        leia(contador)
+
+        enquanto (contador >= 0) {//início de loop
+            escreva(contador, "\n")//digitar os numeros em contagem regressiva
+            contador = contador - 1
+            para (inteiro i = 0; i < 100000000; i++) {} // velocidade da contagem
+        }
+
+        escreva("Acabouu!")
+    }
+}
+
+--------------------------------------------------------------------------------------------
+4º exercício/exercício final:
+programa
+{
+    funcao inicio()//início de programa
+    {
+        inteiro contador//variável do programa
+
+        escreva("Digite o número inicial da contagem regressiva: ")//digitar um número a sua escolha
+        leia(contador)
+
+        enquanto (contador >= 0) {//início de loop
+            escreva(contador, "\n")//digitar os numeros em contagem regressiva
+            contador = contador - 1
+            para (inteiro i = 0; i < 100000000; i++) {} // velocidade da contagem
+        }
+
+        escreva("Acabouu!")
+    }
+}
