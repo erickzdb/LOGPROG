@@ -6,4 +6,4 @@ def conectar():
         user="aluno",
         password="toor",
         database="padaria"
-    )
+    ) 
