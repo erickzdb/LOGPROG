@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brasileirão 2026 | Tabela e Clubes</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at top,#063b27 0,#031d15 38%,#020b08 100%);
+    color:#fff;
+    min-height:100vh;
+}
+
+.container{
+    width:94%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header{
+    text-align:center;
+    padding:55px 20px 35px;
+}
+
+.logo-brasileirao{
+    width:90px;
+    height:90px;
+    margin:auto;
+    margin-bottom:18px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#00a859,#006b3c);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+header h1{
+    font-size:clamp(30px,5vw,55px);
+    margin-bottom:10px;
+}
+
+header h1 span{
+    color:#25d878;
+}
+
+header p{
+    color:#b8d7ca;
+    font-size:16px;
+}
+
+/* =========================
+   TABELA
+========================= */
+
+.table-box{
+    background:rgba(255,255,255,.97);
+    color:#222;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 20px 70px rgba(0,0,0,.35);
+    margin-bottom:70px;
+}
+
+.table-title{
+    background:linear-gradient(135deg,#006b3c,#009c55);
+    color:#fff;
+    padding:25px;
+}
+
+.table-title h2{
+    font-size:25px;
+}
+
+.table-title p{
+    margin-top:6px;
+    opacity:.85;
+    font-size:14px;
+}
+
+.table-scroll{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    min-width:850px;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#151515;
+    color:white;
+}
+
+th{
+    padding:15px 9px;
+    font-size:12px;
+}
+
+td{
+    padding:11px 8px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+    font-size:13px;
+}
+
+td:nth-child(2){
+    text-align:left;
+}
+
+tbody tr{
+    transition:.2s;
+}
+
+tbody tr:hover{
+    background:#f0fff7;
+    transform:scale(1.002);
+}
+
+.pos{
+    font-weight:bold;
+    width:45px;
+}
+
+.team-cell{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:bold;
+}
+
+.escudo{
+    width:36px;
+    height:36px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:8px;
+    padding:3px;
+}
+
+.points{
+    font-weight:bold;
+    color:#007c45;
+}
+
+.libertadores{
+    border-left:5px solid #006b3c;
+}
+
+.pre{
+    border-left:5px solid #00a859;
+}
+
+.sula{
+    border-left:5px solid #2196f3;
+}
+
+.z4{
+    border-left:5px solid #d32f2f;
+    background:#fff5f5;
+}
+
+.legenda{
+    padding:20px 25px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    color:#555;
+    font-size:13px;
+}
+
+.legend-item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.cor{
+    width:14px;
+    height:14px;
+    border-radius:3px;
+}
+
+.c-verde{background:#006b3c}
+.c-verde2{background:#00a859}
+.c-azul{background:#2196f3}
+.c-vermelho{background:#d32f2f}
+
+/* =========================
+   SEÇÃO DOS CLUBES
+========================= */
+
+.clubes-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.clubes-header h2{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.clubes-header h2 span{
+    color:#25d878;
+}
+
+.clubes-header p{
+    color:#a9c9bc;
+}
+
+.clubes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+    padding-bottom:80px;
+}
+
+.clube-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:22px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    transition:.35s;
+}
+
+.clube-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
+    border-color:#1bd777;
+}
+
+.clube-foto{
+    height:190px;
+    overflow:hidden;
+    position:relative;
+}
+
+.clube-foto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.clube-card:hover .clube-foto img{
+    transform:scale(1.08);
+}
+
+.clube-foto::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 45%,rgba(0,0,0,.75));
+}
+
+.clube-info{
+    padding:20px;
+    position:relative;
+}
+
+.clube-topo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:-48px;
+    position:relative;
+    z-index:2;
+    margin-bottom:15px;
+}
+
+.clube-topo img{
+    width:65px;
+    height:65px;
+    object-fit:contain;
+    background:white;
+    border-radius:15px;
+    padding:6px;
+    box-shadow:0 7px 20px rgba(0,0,0,.4);
+}
+
+.clube-topo h3{
+    font-size:21px;
+}
+
+.estado{
+    color:#83bda5;
+    font-size:12px;
+    margin-top:3px;
+}
+
+.curiosidade{
+    color:#d9eee5;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:15px;
+    background:#006b3c;
+    color:#fff;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding:30px 15px;
+    color:#719989;
+    font-size:12px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    header{
+        padding-top:35px;
+    }
+
+    .table-box{
+        border-radius:15px;
+    }
+
+    .clubes-grid{
+        grid-template-columns:1fr;
+    }
+
+    .clubes-header h2{
+        font-size:29px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <div class="logo-brasileirao">⚽</div>
+    <h1>BRASILEIRÃO <span>2026</span></h1>
+    <p>Tabela de classificação, escudos, fotos e curiosidades dos 20 clubes</p>
+</header>
+
+
+<!-- =========================
+     TABELA
+========================= -->
+
+<section class="table-box">
+
+    <div class="table-title">
+        <h2>🏆 Classificação</h2>
+        <p>Atualização — Brasileirão Série A 2026</p>
+    </div>
+
+    <div class="table-scroll">
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Clube</th>
+                <th>PTS</th>
+                <th>J</th>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+                <th>GP</th>
+                <th>GC</th>
+                <th>SG</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr class="libertadores">
+            <td class="pos">1</td>
+            <td>
+                <div class="team-cell">
+                    <img class="escudo" src="https://logodetimes.com/times/palmeiras/logo-palmeiras-256.png">
+                    Palmeiras
+                </div>
+            </td>
+            <td class="points">48</td><td>23</td><td>14</td><td>6</td><td>3</td><td>40</td><td>19</td><td>+21</td>
+        </tr>
+
+        <tr class="libertadores">
+            <td class="pos">2</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png">
+                Flamengo
+            </div></td>
+            <td class="points">45</td><td>23</td><td>13</td><td>6</td><td>4</td><td>45</td><td>21</td><td>+24</td>
+        </tr>
+
+        <tr class="libertadores">
+            <td class="pos">3</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/athletico-paranaense/logo-athletico-paranaense-256.png">
+                Athletico-PR
+            </div></td>
+            <td class="points">41</td><td>23</td><td>12</td><td>5</td><td>6</td><td>31</td><td>20</td><td>+11</td>
+        </tr>
+
+        <tr class="libertadores">
+            <td class="pos">4</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/fluminense/logo-fluminense-256.png">
+                Fluminense
+            </div></td>
+            <td class="points">41</td><td>24</td><td>11</td><td>8</td><td>5</td><td>36</td><td>29</td><td>+7</td>
+        </tr>
+
+        <tr class="libertadores">
+            <td class="pos">5</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/cruzeiro/logo-cruzeiro-256.png">
+                Cruzeiro
+            </div></td>
+            <td class="points">39</td><td>24</td><td>11</td><td>6</td><td>7</td><td>34</td><td>33</td><td>+1</td>
+        </tr>
+
+        <tr class="pre">
+            <td class="pos">6</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/bahia/logo-bahia-256.png">
+                Bahia
+            </div></td>
+            <td class="points">34</td><td>23</td><td>8</td><td>10</td><td>5</td><td>32</td><td>28</td><td>+4</td>
+        </tr>
+
+        <tr class="sula">
+            <td class="pos">7</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-256.png">
+                Atlético-MG
+            </div></td>
+            <td class="points">33</td><td>23</td><td>9</td><td>6</td><td>8</td><td>30</td><td>27</td><td>+3</td>
+        </tr>
+
+        <tr class="sula">
+            <td class="pos">8</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/red-bull-bragantino/logo-red-bull-bragantino-256.png">
+                Red Bull Bragantino
+            </div></td>
+            <td class="points">32</td><td>22</td><td>9</td><td>5</td><td>8</td><td>27</td><td>23</td><td>+4</td>
+        </tr>
+
+        <tr class="sula">
+            <td class="pos">9</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/corinthians/logo-corinthians-256.png">
+                Corinthians
+            </div></td>
+            <td class="points">32</td><td>23</td><td>8</td><td>8</td><td>7</td><td>25</td><td>22</td><td>+3</td>
+        </tr>
+
+        <tr class="sula">
+            <td class="pos">10</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/coritiba/logo-coritiba-256.png">
+                Coritiba
+            </div></td>
+            <td class="points">31</td><td>23</td><td>8</td><td>7</td><td>8</td><td>28</td><td>30</td><td>-2</td>
+        </tr>
+
+        <tr>
+            <td class="pos">11</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/botafogo/logo-botafogo-256.png">
+                Botafogo
+            </div></td>
+            <td class="points">30</td><td>22</td><td>8</td><td>6</td><td>8</td><td>35</td><td>34</td><td>+1</td>
+        </tr>
+
+        <tr>
+            <td class="pos">12</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/vitoria/logo-vitoria-256.png">
+                Vitória
+            </div></td>
+            <td class="points">29</td><td>23</td><td>8</td><td>5</td><td>10</td><td>23</td><td>33</td><td>-10</td>
+        </tr>
+
+        <tr>
+            <td class="pos">13</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/sao-paulo/logo-sao-paulo-256.png">
+                São Paulo
+            </div></td>
+            <td class="points">27</td><td>22</td><td>7</td><td>6</td><td>9</td><td>27</td><td>26</td><td>+1</td>
+        </tr>
+
+        <tr>
+            <td class="pos">14</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/santos/logo-santos-256.png">
+                Santos
+            </div></td>
+            <td class="points">25</td><td>22</td><td>6</td><td>7</td><td>9</td><td>32</td><td>35</td><td>-3</td>
+        </tr>
+
+        <tr>
+            <td class="pos">15</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/gremio/logo-gremio-256.png">
+                Grêmio
+            </div></td>
+            <td class="points">25</td><td>22</td><td>6</td><td>7</td><td>9</td><td>24</td><td>30</td><td>-6</td>
+        </tr>
+
+        <tr>
+            <td class="pos">16</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/internacional/logo-internacional-256.png">
+                Internacional
+            </div></td>
+            <td class="points">25</td><td>24</td><td>5</td><td>10</td><td>9</td><td>24</td><td>28</td><td>-4</td>
+        </tr>
+
+        <tr class="z4">
+            <td class="pos">17</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/mirassol/logo-mirassol-256.png">
+                Mirassol
+            </div></td>
+            <td class="points">23</td><td>22</td><td>6</td><td>5</td><td>11</td><td>25</td><td>35</td><td>-10</td>
+        </tr>
+
+        <tr class="z4">
+            <td class="pos">18</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/remo/logo-remo-256.png">
+                Remo
+            </div></td>
+            <td class="points">23</td><td>24</td><td>5</td><td>8</td><td>11</td><td>28</td><td>39</td><td>-11</td>
+        </tr>
+
+        <tr class="z4">
+            <td class="pos">19</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-256.png">
+                Vasco
+            </div></td>
+            <td class="points">22</td><td>22</td><td>5</td><td>7</td><td>10</td><td>23</td><td>34</td><td>-11</td>
+        </tr>
+
+        <tr class="z4">
+            <td class="pos">20</td>
+            <td><div class="team-cell">
+                <img class="escudo" src="https://logodetimes.com/times/chapecoense/logo-chapecoense-256.png">
+                Chapecoense
+            </div></td>
+            <td class="points">11</td><td>22</td><td>1</td><td>8</td><td>13</td><td>23</td><td>46</td><td>-23</td>
+        </tr>
+
+        </tbody>
+    </table>
+    </div>
+
+    <div class="legenda">
+        <div class="legend-item"><span class="cor c-verde"></span> Libertadores</div>
+        <div class="legend-item"><span class="cor c-verde2"></span> Pré-Libertadores</div>
+        <div class="legend-item"><span class="cor c-azul"></span> Sul-Americana</div>
+        <div class="legend-item"><span class="cor c-vermelho"></span> Rebaixamento</div>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CLUBES
+========================= -->
+
+<section>
+
+<div class="clubes-header">
+    <h2>Conheça os <span>20 clubes</span></h2>
+    <p>Fotos, história e curiosidades do Brasileirão 2026</p>
+</div>
+
+<div class="clubes-grid">
+
+
+<!-- PALMEIRAS -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/palmeiras/logo-palmeiras-256.png">
+<div>
+<h3>Palmeiras</h3>
+<div class="estado">São Paulo • SP</div>
+</div>
+</div>
+<p class="curiosidade">
+Fundado em 1914 como Palestra Italia, o Palmeiras é um dos clubes mais tradicionais do futebol brasileiro. A identidade italiana faz parte da história do clube até hoje.
+</p>
+<span class="tag">Palestra Italia</span>
+</div>
+</article>
+
+
+<!-- FLAMENGO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/flamengo/logo-flamengo-256.png">
+<div>
+<h3>Flamengo</h3>
+<div class="estado">Rio de Janeiro • RJ</div>
+</div>
+</div>
+<p class="curiosidade">
+O Flamengo nasceu ligado ao remo antes de construir uma das maiores torcidas do Brasil no futebol. O vermelho e preto se tornaram uma das combinações mais reconhecidas do país.
+</p>
+<span class="tag">Rubro-Negro</span>
+</div>
+</article>
+
+
+<!-- ATHLETICO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/athletico-paranaense/logo-athletico-paranaense-256.png">
+<div>
+<h3>Athletico-PR</h3>
+<div class="estado">Curitiba • PR</div>
+</div>
+</div>
+<p class="curiosidade">
+O Athletico é conhecido pelo apelido Furacão e por uma identidade moderna no futebol brasileiro, além da tradicional Arena da Baixada.
+</p>
+<span class="tag">Furacão</span>
+</div>
+</article>
+
+
+<!-- FLUMINENSE -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/fluminense/logo-fluminense-256.png">
+<div>
+<h3>Fluminense</h3>
+<div class="estado">Rio de Janeiro • RJ</div>
+</div>
+</div>
+<p class="curiosidade">
+O Tricolor das Laranjeiras foi fundado em 1902 e tem uma das histórias mais tradicionais do futebol brasileiro, com forte ligação com o bairro das Laranjeiras.
+</p>
+<span class="tag">Tricolor</span>
+</div>
+</article>
+
+
+<!-- CRUZEIRO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/cruzeiro/logo-cruzeiro-256.png">
+<div>
+<h3>Cruzeiro</h3>
+<div class="estado">Belo Horizonte • MG</div>
+</div>
+</div>
+<p class="curiosidade">
+A Raposa é um dos grandes clubes de Minas Gerais e possui uma história marcada por títulos nacionais e internacionais.
+</p>
+<span class="tag">Raposa</span>
+</div>
+</article>
+
+
+<!-- BAHIA -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/bahia/logo-bahia-256.png">
+<div>
+<h3>Bahia</h3>
+<div class="estado">Salvador • BA</div>
+</div>
+</div>
+<p class="curiosidade">
+O Esquadrão de Aço foi o primeiro campeão brasileiro reconhecido oficialmente, em 1959, e tem enorme importância cultural no futebol baiano.
+</p>
+<span class="tag">Esquadrão de Aço</span>
+</div>
+</article>
+
+
+<!-- ATLÉTICO MG -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-256.png">
+<div>
+<h3>Atlético-MG</h3>
+<div class="estado">Belo Horizonte • MG</div>
+</div>
+</div>
+<p class="curiosidade">
+O Galo é um dos clubes mais populares de Minas Gerais e tem no preto e branco uma das combinações de cores mais tradicionais do futebol brasileiro.
+</p>
+<span class="tag">Galo</span>
+</div>
+</article>
+
+
+<!-- BRAGANTINO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/red-bull-bragantino/logo-red-bull-bragantino-256.png">
+<div>
+<h3>Red Bull Bragantino</h3>
+<div class="estado">Bragança Paulista • SP</div>
+</div>
+</div>
+<p class="curiosidade">
+O clube passou por uma transformação estrutural após a parceria com a Red Bull, tornando-se um projeto conhecido pela aposta em jovens jogadores.
+</p>
+<span class="tag">Massa Bruta</span>
+</div>
+</article>
+
+
+<!-- CORINTHIANS -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1556056504-5c7696c4c28d?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/corinthians/logo-corinthians-256.png">
+<div>
+<h3>Corinthians</h3>
+<div class="estado">São Paulo • SP</div>
+</div>
+</div>
+<p class="curiosidade">
+O Corinthians foi fundado em 1910 por trabalhadores e rapidamente se tornou uma das maiores forças populares do futebol brasileiro.
+</p>
+<span class="tag">Timão</span>
+</div>
+</article>
+
+
+<!-- CORITIBA -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/coritiba/logo-coritiba-256.png">
+<div>
+<h3>Coritiba</h3>
+<div class="estado">Curitiba • PR</div>
+</div>
+</div>
+<p class="curiosidade">
+O Coxa é um dos clubes mais tradicionais do Paraná e tem uma longa história no futebol brasileiro.
+</p>
+<span class="tag">Coxa</span>
+</div>
+</article>
+
+
+<!-- BOTAFOGO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/botafogo/logo-botafogo-256.png">
+<div>
+<h3>Botafogo</h3>
+<div class="estado">Rio de Janeiro • RJ</div>
+</div>
+</div>
+<p class="curiosidade">
+O Botafogo tem uma história profundamente ligada ao futebol carioca e revelou grandes jogadores ao longo das décadas.
+</p>
+<span class="tag">Glorioso</span>
+</div>
+</article>
+
+
+<!-- VITÓRIA -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/vitoria/logo-vitoria-256.png">
+<div>
+<h3>Vitória</h3>
+<div class="estado">Salvador • BA</div>
+</div>
+</div>
+<p class="curiosidade">
+O Leão é uma das maiores forças esportivas da Bahia e manda seus jogos no tradicional Barradão.
+</p>
+<span class="tag">Leão</span>
+</div>
+</article>
+
+
+<!-- SÃO PAULO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/sao-paulo/logo-sao-paulo-256.png">
+<div>
+<h3>São Paulo</h3>
+<div class="estado">São Paulo • SP</div>
+</div>
+</div>
+<p class="curiosidade">
+O Tricolor Paulista possui uma das histórias internacionais mais importantes entre clubes brasileiros e é conhecido pelo estádio do Morumbi.
+</p>
+<span class="tag">Tricolor Paulista</span>
+</div>
+</article>
+
+
+<!-- SANTOS -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/santos/logo-santos-256.png">
+<div>
+<h3>Santos</h3>
+<div class="estado">Santos • SP</div>
+</div>
+</div>
+<p class="curiosidade">
+O Santos ficou mundialmente conhecido na era Pelé e construiu uma das histórias mais famosas do futebol brasileiro.
+</p>
+<span class="tag">Peixe</span>
+</div>
+</article>
+
+
+<!-- GRÊMIO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1569952547749-6c9c7fa1f9f6?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/gremio/logo-gremio-256.png">
+<div>
+<h3>Grêmio</h3>
+<div class="estado">Porto Alegre • RS</div>
+</div>
+</div>
+<p class="curiosidade">
+O Tricolor Gaúcho possui uma das maiores torcidas do Sul e uma rica história de títulos nacionais e continentais.
+</p>
+<span class="tag">Tricolor Gaúcho</span>
+</div>
+</article>
+
+
+<!-- INTERNACIONAL -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/internacional/logo-internacional-256.png">
+<div>
+<h3>Internacional</h3>
+<div class="estado">Porto Alegre • RS</div>
+</div>
+</div>
+<p class="curiosidade">
+O Colorado é uma das grandes forças do futebol gaúcho e possui uma história internacional de destaque.
+</p>
+<span class="tag">Colorado</span>
+</div>
+</article>
+
+
+<!-- MIRASSOL -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/mirassol/logo-mirassol-256.png">
+<div>
+<h3>Mirassol</h3>
+<div class="estado">Mirassol • SP</div>
+</div>
+</div>
+<p class="curiosidade">
+O Mirassol representa uma das cidades do interior paulista e vem ganhando espaço no cenário nacional.
+</p>
+<span class="tag">Leão Caipira</span>
+</div>
+</article>
+
+
+<!-- REMO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/remo/logo-remo-256.png">
+<div>
+<h3>Remo</h3>
+<div class="estado">Belém • PA</div>
+</div>
+</div>
+<p class="curiosidade">
+O Leão Azul é um dos clubes mais tradicionais da região Norte e tem forte presença no futebol paraense.
+</p>
+<span class="tag">Leão Azul</span>
+</div>
+</article>
+
+
+<!-- VASCO -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img src="https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-256.png">
+<div>
+<h3>Vasco</h3>
+<div class="estado">Rio de Janeiro • RJ</div>
+</div>
+</div>
+<p class="curiosidade">
+O Vasco tem uma história marcante na luta contra o racismo e pela inclusão no futebol brasileiro, além da tradição de São Januário.
+</p>
+<span class="tag">Gigante da Colina</span>
+</div>
+</article>
+
+
+<!-- CHAPECOENSE -->
+
+<article class="clube-card">
+<div class="clube-foto">
+<img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&w=900&q=80">
+</div>
+<div class="clube-info">
+<div class="clube-topo">
+<img class="escudo" src="https://logodetimes.com/times/chapecoense/logo-chapecoense-256.png">
+<div>
+<h3>Chapecoense</h3>
+<div class="estado">Chapecó • SC</div>
+</div>
+</div>
+<p class="curiosidade">
+A Chapecoense se tornou conhecida mundialmente pela trajetória de reconstrução após a tragédia de 2016, mantendo forte ligação com a comunidade de Chapecó.
+</p>
+<span class="tag">Verdão do Oeste</span>
+</div>
+</article>
+
+</div>
+</section>
+
+
+<footer>
+    Brasileirão Série A 2026 • Tabela e informações dos clubes
+</footer>
+
+</div>
+
+</body>
+</html>
